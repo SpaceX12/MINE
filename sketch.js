@@ -1,24 +1,24 @@
-var click 
+var sun, planet
 
 function setup() {
-  createCanvas(692, 540);
-  click = ellipseMode(RADIUS);
-  click.shapeColor = 'red';
+  createCanvas(600, 500); 
+  
+  sun = ellipseMode(RADIUS);
+  planet = ellipseMode(RADIUS);
+  
+  sun.shapeColor= 'yellow';
+  planet.shapeColor = 'green';
 }
 
 function draw() {
-  background(255);
+  background(0);
   
-  ellipse(300, 200, 10, 10);
+  planet.velocityX = 1;
   
-  click.x = mouseX;
-  click.y = mouseY;
   
-  if(click.y>200){
-    canvas.shapeColor = 'black';
-  }
+  ellipse(280,250,55);
+  ellipse(100,250,10);
   
-  if(click.x>300){
-    canvas.shapeColor = 'purple';
-  }
+  sun.scale = Math.round(frameCount/2);
+  
 }
